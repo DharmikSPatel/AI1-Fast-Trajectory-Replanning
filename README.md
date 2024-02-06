@@ -1,1 +1,3 @@
-# AI1-Fast-Trajectory-Replanning
+Dharmik Patel - 207003436
+Adityaraj Gangopadhyay - 
+
