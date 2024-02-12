@@ -1,3 +1,28 @@
 Dharmik Patel - 207003436
 Adityaraj Gangopadhyay - 
 
+run.py:
+    have a for loop
+    for(50 times)
+        generate a maze
+        print maze
+        call A* forwards
+            - show each step
+        call A* backwards
+            - show each step
+        call A* adaptive
+            - show each step
+        keep count of run times
+    print the average run times
+maze.py:
+    instance methods:
+        init:
+            loads a maze from txt or generates a new one
+        print maze:
+            prints the maze to terminal
+        get_neighbors:
+            gets a list of the maze's 4 neighbors
+        is_blocked
+        is_open
+        
+    
