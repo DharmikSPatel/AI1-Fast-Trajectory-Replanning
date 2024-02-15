@@ -74,15 +74,15 @@ class Maze:
             print("|")
         print('‾%s‾' % ('‾'*self.size))
     def move_agent_to(self, new_agent_pos: tuple) -> bool:
-        if not self.is_valid_pos(new_agent_pos[0], new_agent_pos[1]):
+        if not self.is_valid_pos(new_agent_pos):
             return False
         if self.maze[new_agent_pos[0]][new_agent_pos[1]] == Maze.BLOCKED_CELL:
             return False
         self.agent_pos = new_agent_pos
         self.maze[new_agent_pos[0]][new_agent_pos[1]] = Maze.MOVED_CELL
         return True
-    def is_valid_pos(self, x, y) -> bool:
-        return x >= 0 and x < self.size and y >= 0 and y < self.size
+    def is_valid_pos(self, pos:tuple) -> bool:
+        return pos[0] >= 0 and pos[0] < self.size and pos[1] >= 0 and pos[1] < self.size
     def is_blocked(self, x, y) -> bool:
         return self.maze[x][y] == Maze.BLOCKED_CELL
     def swap_goal_and_start(self):

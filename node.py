@@ -18,7 +18,8 @@ class Node:
             s = "(%d, %d) P: None" % (self.x, self.y)
         return s
     def __lt__(self, other:Node) -> bool:
-        # favors larger g_vals. so explores more towards the goal state
+        # (>) favors larger g_vals. so explores more towards the goal state
+        # (<) favors smaller g_vals. so explores more towards the start state
         return self.g_val > other.g_val
     def __eq__(self, other:Node) -> bool:
         return self.x == other.x and self.y == other.y
