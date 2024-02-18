@@ -1,6 +1,4 @@
 from __future__ import annotations
-from io import TextIOWrapper
-import copy
 class Maze:
     DEF_SIZE = 10
     BLOCKED_CELL = '#'
@@ -8,6 +6,7 @@ class Maze:
     START_CELL = 'S'
     GOAL_CELL = 'G'
     MOVED_CELL = '.'
+    CARDINALS = [(-1, 0), (0, 1), (1, 0), (0, -1)]
     #make a default blank maze
     def __init__(self, size = DEF_SIZE, start_pos=(0,0), goal_pos=None) -> None:   
         self.size:int = size
@@ -23,10 +22,14 @@ class Maze:
             for j in range(self.size):
                 if self.maze[i][j] == Maze.MOVED_CELL:
                     self.maze[i][j] = Maze.FREE_CELL
-    def generate_fog_maze(self, blank_maze = False) -> Maze:
+    def generate_fog_maze(self) -> Maze:
         fog_maze = Maze(size=self.size,
                     start_pos=self.start_pos, 
                     goal_pos=self.goal_pos)
+
+        #let it know its intial neighbors
+        for neighbor in self.get_neighbors(self.start_pos):
+            fog_maze.set_cell(neighbor, self.get_cell(neighbor))
         return fog_maze
     @classmethod
     def generate_maze(cls, size) -> Maze:
@@ -36,13 +39,10 @@ class Maze:
     def load_maze(cls, maze_path: str) -> Maze:
         maze_file = open(maze_path)
         size = int(maze_file.readline())
-        # print(size)
         maze = Maze(size=size)
 
         lines = maze_file.read().splitlines()
-        # print(len(lines))
         for i in range(size):
-            # print(i, len(lines[i]))
             for j in range(size):
                 cell_val = lines[i][j]
                 if cell_val == maze.START_CELL:
@@ -54,7 +54,15 @@ class Maze:
                 maze.maze[i][j] = cell_val                  
         maze_file.close()
         return maze
-    
+    def get_neighbors(self, pos):
+        x, y = pos
+        neighbors = []
+        for dx, dy in Maze.CARDINALS:
+            neighbor = (x-dx, y-dy)
+            if self.is_valid_pos(neighbor):
+                neighbors.append(neighbor)
+        return neighbors
+        
     def export_maze(self) -> None:
         pass
     def print_maze(self) -> None:
@@ -73,20 +81,29 @@ class Maze:
                 print("%s" % print_val, end='')
             print("|")
         print('‾%s‾' % ('‾'*self.size))
-    def move_agent_to(self, new_agent_pos: tuple) -> bool:
-        if not self.is_valid_pos(new_agent_pos):
+    def move_agent_to(self, pos) -> bool:
+        if not self.is_valid_pos(pos):
             return False
-        if self.maze[new_agent_pos[0]][new_agent_pos[1]] == Maze.BLOCKED_CELL:
+        if self.is_blocked(pos):
             return False
-        self.agent_pos = new_agent_pos
-        self.maze[new_agent_pos[0]][new_agent_pos[1]] = Maze.MOVED_CELL
+        self.agent_pos = pos
+        self.set_cell(pos, Maze.MOVED_CELL)
         return True
-    def is_valid_pos(self, pos:tuple) -> bool:
-        return pos[0] >= 0 and pos[0] < self.size and pos[1] >= 0 and pos[1] < self.size
-    def is_blocked(self, x, y) -> bool:
-        return self.maze[x][y] == Maze.BLOCKED_CELL
+    def is_valid_pos(self, pos) -> bool:
+        x, y = pos
+        return x >= 0 and x < self.size and y >= 0 and y < self.size
+    def is_blocked(self, pos) -> bool:
+        return self.get_cell(pos) == Maze.BLOCKED_CELL
+    def is_goal(self, pos) -> bool:
+        return pos == self.goal_pos
     def swap_goal_and_start(self):
-        temp_pos = self.start_pos
-        self.start_pos = self.goal_pos
-        self.goal_pos = temp_pos
+        self.start_pos, self.goal_pos = self.goal_pos, self.start_pos
         self.agent_pos = self.start_pos
+    def get_cell(self, pos):
+        x, y = pos
+        return self.maze[x][y]
+    def set_cell(self, pos, value):
+        x, y = pos
+        self.maze[x][y] = value
+    def goal_reached(self) -> bool:
+        return self.agent_pos == self.goal_pos
