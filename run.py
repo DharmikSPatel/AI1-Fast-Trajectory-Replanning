@@ -1,5 +1,5 @@
 from maze import Maze
-from a_star import repeated_a_star
+from A_star import repeated_a_star
 
 print("Maze 0") 
 maze0 = Maze(size=10)
