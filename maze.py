@@ -1,10 +1,12 @@
 from __future__ import annotations
+import random
+
 class Maze:
     DEF_SIZE = 10
     BLOCKED_CELL = '#'
     FREE_CELL = '0' #if you wanna change what is printed on screen, change it in the print method
-    START_CELL = 'S'
-    GOAL_CELL = 'G'
+    START_CELL = 'A'
+    GOAL_CELL = 'T'
     MOVED_CELL = '.'
     CARDINALS = [(-1, 0), (0, 1), (1, 0), (0, -1)]
     #make a default blank maze
@@ -33,8 +35,48 @@ class Maze:
         return fog_maze
     @classmethod
     def generate_maze(cls, size) -> Maze:
-        #return a maze
-        pass
+        maze = Maze(size=size)
+        visited = set()
+        stack = []
+        startCell = (random.randint(0, size - 1), random.randint(0, size - 1))
+        maze.start_pos = startCell
+        maze.agent_pos = startCell
+        visited.add(startCell)
+        stack.append(startCell)
+        
+        while len(visited) < size ** 2:
+            currentCell = stack[-1]
+            neighbors = maze.get_neighbors(currentCell)
+            unvisited_neighbors = [n for n in neighbors if n not in visited]
+            
+            if unvisited_neighbors:
+                nextCell = random.choice(unvisited_neighbors)
+                visited.add(nextCell)
+                
+                if random.random() < 0.3:
+                    maze.maze[nextCell[0]][nextCell[1]] = Maze.BLOCKED_CELL
+                else:
+                    maze.maze[nextCell[0]][nextCell[1]] = Maze.FREE_CELL
+                    stack.append(nextCell)
+            else:
+                stack.pop()
+                
+            if not stack:  # if the stack is empty
+                unvisitedCells = [(i, j) for i in range(size) for j in range(size) if (i, j) not in visited]
+
+                if unvisitedCells:
+                    nextCell = random.choice(unvisitedCells)
+                    visited.add(nextCell)
+                    stack.append(nextCell)
+
+        goalCell = (random.randint(0, size - 1), random.randint(0, size - 1))
+        
+        while goalCell == startCell or maze.maze[goalCell[0]][goalCell[1]] == Maze.BLOCKED_CELL:
+            goalCell = (random.randint(0, size - 1), random.randint(0, size - 1))
+            
+        maze.goal_pos = goalCell
+        return maze
+
     @classmethod
     def load_maze(cls, maze_path: str) -> Maze:
         maze_file = open(maze_path)
