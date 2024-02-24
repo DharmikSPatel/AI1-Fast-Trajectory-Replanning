@@ -1,7 +1,7 @@
-from heapq import heappop, heappush
 import time
 from maze import Maze
 from node import Node
+from binaryHeap import BinaryHeap
 h_val_dict = {}
 def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = False) -> tuple[bool, float, int]:
     start_time = time.perf_counter()
@@ -36,16 +36,22 @@ def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = Fal
     end_time = time.perf_counter()
     return(path_found, end_time - start_time, num_expanded_nodes)
 def a_star(fog_maze: Maze):
-    open_pq = []
+    open_pq = BinaryHeap()
     open_map = {}
     closed_set = set()
     start_node = Node(fog_maze.agent_pos, 0, h_val(fog_maze.agent_pos, fog_maze.goal_pos), None)
-    heappush(open_pq, start_node)
+    #heappush(open_pq, start_node)
+    open_pq.binaryHeapPush(start_node)
+
     open_map[start_node.pos] = start_node
     while open_pq:
-        min_node:Node = heappop(open_pq)
-        while not min_node.active: 
-            min_node = heappop(open_pq)
+        # min_node:Node = heappop(open_pq)
+        min_node: Node = open_pq.binaryHeapPop()
+        while min_node is not None and not min_node.active:
+            # min_node = heappop(open_pq)
+            min_node: Node = open_pq.binaryHeapPop()
+        if min_node is None:
+            break
         if fog_maze.is_goal(min_node.pos): 
             return (min_node, closed_set)
         closed_set.add(min_node)
@@ -59,10 +65,12 @@ def a_star(fog_maze: Maze):
                 old:Node = open_map.get(neighbor.pos)
                 if neighbor.f_val < old.f_val:
                     open_map.get(neighbor.pos).active = False       
-                    heappush(open_pq, neighbor)
+                    # heappush(open_pq, neighbor)
+                    open_pq.binaryHeapPush(neighbor)
                     open_map[neighbor.pos] = neighbor
             else:
-                heappush(open_pq, neighbor)
+                # heappush(open_pq, neighbor)
+                open_pq.binaryHeapPush(neighbor)
                 open_map[neighbor.pos] = neighbor
     return (None, closed_set)
 
