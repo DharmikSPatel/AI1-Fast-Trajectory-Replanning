@@ -30,7 +30,7 @@ def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = Fal
         if steps < max_num_of_steps_to_print:
             for node in path:
                 fog_maze.set_cell(node.pos, Maze.MOVED_CELL)
-            print("Attempted Path Step:%s", steps)
+            print("Attempted Path Step:", steps)
             fog_maze.print_maze()
             for node in path:
                 fog_maze.set_cell(node.pos, Maze.FREE_CELL)
@@ -42,7 +42,7 @@ def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = Fal
                     fog_maze.set_cell(neighbor, real_maze.get_cell(neighbor))
             else:
                 if steps < max_num_of_steps_to_print:
-                    print("Actual Path Step:%s", steps)
+                    print("Attempted Path Step:", steps)
                     fog_maze.print_maze()
                     steps+=1
                 break #replan! start from while loop again
