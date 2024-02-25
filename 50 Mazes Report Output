@@ -1,0 +1,250 @@
+Maze Number: 1
+Forwards Repeated A* took: (True, 0.038741700001992285, 2292)
+Backwards Repeated A* took: (True, 0.052572299959138036, 2951)
+Adaptive Repeated A* took: (True, 0.03828549990430474, 2219)
+
+Maze Number: 2
+Forwards Repeated A* took: (True, 0.012299999943934381, 758)
+Backwards Repeated A* took: (True, 0.011133300024084747, 751)
+Adaptive Repeated A* took: (True, 0.01258029998280108, 792)
+
+Maze Number: 3
+Forwards Repeated A* took: (True, 0.07820250000804663, 4202)
+Backwards Repeated A* took: (True, 0.055489900056272745, 3034)
+Adaptive Repeated A* took: (True, 0.07790829997975379, 4175)
+
+Maze Number: 4
+Forwards Repeated A* took: (True, 0.13359159999527037, 7328)
+Backwards Repeated A* took: (True, 0.053331099916249514, 3174)
+Adaptive Repeated A* took: (True, 0.126084899995476, 7016)
+
+Maze Number: 5
+Forwards Repeated A* took: (True, 0.017719099996611476, 979)
+Backwards Repeated A* took: (True, 0.024568499997258186, 1407)
+Adaptive Repeated A* took: (True, 0.017129500047303736, 954)
+
+Maze Number: 6
+Forwards Repeated A* took: (True, 0.027103999978862703, 1657)
+Backwards Repeated A* took: (True, 0.01843419997021556, 1053)
+Adaptive Repeated A* took: (True, 0.026793899945914745, 1644)
+
+Maze Number: 7
+Forwards Repeated A* took: (True, 0.06327929999679327, 3893)
+Backwards Repeated A* took: (True, 0.11394479998853058, 6586)
+Adaptive Repeated A* took: (True, 0.05605449993163347, 3399)
+
+Maze Number: 8
+Forwards Repeated A* took: (True, 0.0006240999791771173, 15)
+Backwards Repeated A* took: (True, 0.0008792000589892268, 34)
+Adaptive Repeated A* took: (True, 0.0005778999766334891, 15)
+
+Maze Number: 9
+Forwards Repeated A* took: (True, 0.059328499948605895, 3337)
+Backwards Repeated A* took: (True, 0.07154120004270226, 3515)
+Adaptive Repeated A* took: (True, 0.059543499955907464, 3271)
+
+Maze Number: 10
+Forwards Repeated A* took: (True, 0.055086800013668835, 3286)
+Backwards Repeated A* took: (True, 0.09043159999419004, 4948)
+Adaptive Repeated A* took: (True, 0.05377240001689643, 3169)
+
+Maze Number: 11
+Forwards Repeated A* took: (True, 0.1468196000205353, 7503)
+Backwards Repeated A* took: (True, 0.1204460000153631, 6266)
+Adaptive Repeated A* took: (True, 0.14070220000576228, 7416)
+
+Maze Number: 12
+Forwards Repeated A* took: (False, 0.18790020002052188, 13445)
+Backwards Repeated A* took: (False, 0.010269000078551471, 516)
+Adaptive Repeated A* took: (False, 0.18460439995396882, 13420)
+
+Maze Number: 13
+Forwards Repeated A* took: (True, 0.00441690010484308, 256)
+Backwards Repeated A* took: (True, 0.004605800029821694, 267)
+Adaptive Repeated A* took: (True, 0.004076099954545498, 255)
+
+Maze Number: 14
+Forwards Repeated A* took: (True, 0.00836209999397397, 523)
+Backwards Repeated A* took: (True, 0.009167399955913424, 551)
+Adaptive Repeated A* took: (True, 0.007983100018464029, 478)
+
+Maze Number: 15
+Forwards Repeated A* took: (True, 0.001846599974669516, 98)
+Backwards Repeated A* took: (True, 0.0018406999297440052, 104)
+Adaptive Repeated A* took: (True, 0.0029681999003514647, 182)
+
+Maze Number: 16
+Forwards Repeated A* took: (True, 0.07303059997502714, 3946)
+Backwards Repeated A* took: (True, 0.09078289999160916, 5008)
+Adaptive Repeated A* took: (True, 0.07030320004560053, 3787)
+
+Maze Number: 17
+Forwards Repeated A* took: (True, 0.003607999999076128, 207)
+Backwards Repeated A* took: (True, 0.007418900029733777, 484)
+Adaptive Repeated A* took: (True, 0.0035705999471247196, 207)
+
+Maze Number: 18
+Forwards Repeated A* took: (True, 0.03462779999244958, 1964)
+Backwards Repeated A* took: (True, 0.027450100053101778, 1762)
+Adaptive Repeated A* took: (True, 0.0333986000623554, 1895)
+
+Maze Number: 19
+Forwards Repeated A* took: (True, 0.03287829994224012, 1892)
+Backwards Repeated A* took: (True, 0.03337169997394085, 1850)
+Adaptive Repeated A* took: (True, 0.03390379995107651, 1984)
+
+Maze Number: 20
+Forwards Repeated A* took: (True, 0.0026006000116467476, 155)
+Backwards Repeated A* took: (True, 0.001789200003258884, 97)
+Adaptive Repeated A* took: (True, 0.0024769000010564923, 151)
+
+Maze Number: 21
+Forwards Repeated A* took: (True, 0.004524299991317093, 295)
+Backwards Repeated A* took: (True, 0.007079900009557605, 478)
+Adaptive Repeated A* took: (True, 0.0042869000462815166, 269)
+
+Maze Number: 22
+Forwards Repeated A* took: (True, 0.02777280006557703, 1642)
+Backwards Repeated A* took: (True, 0.02487139997538179, 1591)
+Adaptive Repeated A* took: (True, 0.02643650001846254, 1578)
+
+Maze Number: 23
+Forwards Repeated A* took: (True, 0.11316149996127933, 5857)
+Backwards Repeated A* took: (True, 0.13211590005084872, 7163)
+Adaptive Repeated A* took: (True, 0.11234940006397665, 5966)
+
+Maze Number: 24
+Forwards Repeated A* took: (True, 0.13436989998444915, 7186)
+Backwards Repeated A* took: (True, 0.1278106999816373, 7711)
+Adaptive Repeated A* took: (True, 0.13117179996334016, 7004)
+
+Maze Number: 25
+Forwards Repeated A* took: (True, 0.039586400031112134, 2012)
+Backwards Repeated A* took: (True, 0.048199100070632994, 2645)
+Adaptive Repeated A* took: (True, 0.037190700066275895, 2005)
+
+Maze Number: 26
+Forwards Repeated A* took: (True, 0.04829309997148812, 2673)
+Backwards Repeated A* took: (True, 0.02472059999126941, 1347)
+Adaptive Repeated A* took: (True, 0.05338089994620532, 3100)
+
+Maze Number: 27
+Forwards Repeated A* took: (True, 0.019721300108358264, 1114)
+Backwards Repeated A* took: (True, 0.021625300054438412, 1257)
+Adaptive Repeated A* took: (True, 0.020787699962966144, 1254)
+
+Maze Number: 28
+Forwards Repeated A* took: (True, 0.006680899998173118, 409)
+Backwards Repeated A* took: (True, 0.007734899991191924, 472)
+Adaptive Repeated A* took: (True, 0.005727199953980744, 351)
+
+Maze Number: 29
+Forwards Repeated A* took: (True, 0.008090500021353364, 470)
+Backwards Repeated A* took: (True, 0.011169400066137314, 646)
+Adaptive Repeated A* took: (True, 0.007868399959988892, 472)
+
+Maze Number: 30
+Forwards Repeated A* took: (True, 0.02182559994980693, 1230)
+Backwards Repeated A* took: (True, 0.02408939995802939, 1337)
+Adaptive Repeated A* took: (True, 0.021319599938578904, 1212)
+
+Maze Number: 31
+Forwards Repeated A* took: (True, 0.00862910004798323, 534)
+Backwards Repeated A* took: (True, 0.008378300000913441, 520)
+Adaptive Repeated A* took: (True, 0.009036800009198487, 579)
+
+Maze Number: 32
+Forwards Repeated A* took: (True, 0.06594090000726283, 3932)
+Backwards Repeated A* took: (True, 0.04581880010664463, 2713)
+Adaptive Repeated A* took: (True, 0.026875600102357566, 1604)
+
+Maze Number: 33
+Forwards Repeated A* took: (True, 0.03244700003415346, 1835)
+Backwards Repeated A* took: (True, 0.03452580003067851, 1969)
+Adaptive Repeated A* took: (True, 0.03193569998256862, 1829)
+
+Maze Number: 34
+Forwards Repeated A* took: (True, 0.03338360006455332, 1826)
+Backwards Repeated A* took: (True, 0.018812499940395355, 1114)
+Adaptive Repeated A* took: (True, 0.03248900000471622, 1814)
+
+Maze Number: 35
+Forwards Repeated A* took: (True, 0.008035300066694617, 496)
+Backwards Repeated A* took: (True, 0.009606099920347333, 674)
+Adaptive Repeated A* took: (True, 0.007545000058598816, 467)
+
+Maze Number: 36
+Forwards Repeated A* took: (True, 0.03486449993215501, 2081)
+Backwards Repeated A* took: (True, 0.04167179996147752, 2338)
+Adaptive Repeated A* took: (True, 0.03422769997268915, 2037)
+
+Maze Number: 37
+Forwards Repeated A* took: (True, 0.01922389992978424, 1313)
+Backwards Repeated A* took: (True, 0.011864300002343953, 699)
+Adaptive Repeated A* took: (True, 0.018393200007267296, 1210)
+
+Maze Number: 38
+Forwards Repeated A* took: (True, 0.005332100088708103, 320)
+Backwards Repeated A* took: (True, 0.010340000037103891, 686)
+Adaptive Repeated A* took: (True, 0.005329600069671869, 333)
+
+Maze Number: 39
+Forwards Repeated A* took: (True, 0.01582530001178384, 985)
+Backwards Repeated A* took: (True, 0.017163800075650215, 1167)
+Adaptive Repeated A* took: (True, 0.014987099915742874, 927)
+
+Maze Number: 40
+Forwards Repeated A* took: (True, 0.011752699967473745, 674)
+Backwards Repeated A* took: (True, 0.021841100067831576, 1321)
+Adaptive Repeated A* took: (True, 0.01152539998292923, 674)
+
+Maze Number: 41
+Forwards Repeated A* took: (True, 0.041893200017511845, 2319)
+Backwards Repeated A* took: (True, 0.07246489997487515, 4529)
+Adaptive Repeated A* took: (True, 0.04035500006284565, 2298)
+
+Maze Number: 42
+Forwards Repeated A* took: (True, 0.0029378000181168318, 153)
+Backwards Repeated A* took: (True, 0.005468200077302754, 362)
+Adaptive Repeated A* took: (True, 0.0028069999534636736, 153)
+
+Maze Number: 43
+Forwards Repeated A* took: (True, 0.00975930003914982, 554)
+Backwards Repeated A* took: (True, 0.01162180001847446, 681)
+Adaptive Repeated A* took: (True, 0.009559600031934679, 559)
+
+Maze Number: 44
+Forwards Repeated A* took: (True, 0.016659999964758754, 996)
+Backwards Repeated A* took: (True, 0.038258499931544065, 2219)
+Adaptive Repeated A* took: (True, 0.019326800014823675, 1239)
+
+Maze Number: 45
+Forwards Repeated A* took: (True, 0.009341099997982383, 539)
+Backwards Repeated A* took: (True, 0.014590100036002696, 886)
+Adaptive Repeated A* took: (True, 0.009149499936029315, 539)
+
+Maze Number: 46
+Forwards Repeated A* took: (True, 0.06493839994072914, 3466)
+Backwards Repeated A* took: (True, 0.04646119999233633, 2652)
+Adaptive Repeated A* took: (True, 0.06308210000861436, 3433)
+
+Maze Number: 47
+Forwards Repeated A* took: (True, 0.023109700065106153, 1285)
+Backwards Repeated A* took: (True, 0.025106100016273558, 1379)
+Adaptive Repeated A* took: (True, 0.02246290002949536, 1266)
+
+Maze Number: 48
+Forwards Repeated A* took: (True, 0.00740670005325228, 531)
+Backwards Repeated A* took: (True, 0.004426400060765445, 270)
+Adaptive Repeated A* took: (True, 0.009765599970705807, 673)
+
+Maze Number: 49
+Forwards Repeated A* took: (True, 0.041661900002509356, 2295)
+Backwards Repeated A* took: (True, 0.06638329999987036, 3635)
+Adaptive Repeated A* took: (True, 0.04199709999375045, 2387)
+
+Maze Number: 50
+Forwards Repeated A* took: (True, 0.0624188999645412, 3416)
+Backwards Repeated A* took: (True, 0.1405371999135241, 7533)
+Adaptive Repeated A* took: (True, 0.06167640001513064, 3405)
+
