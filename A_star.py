@@ -40,15 +40,12 @@ def a_star(fog_maze: Maze):
     open_map = {}
     closed_set = set()
     start_node = Node(fog_maze.agent_pos, 0, h_val(fog_maze.agent_pos, fog_maze.goal_pos), None)
-    #heappush(open_pq, start_node)
     open_pq.binaryHeapPush(start_node)
 
     open_map[start_node.pos] = start_node
     while open_pq:
-        # min_node:Node = heappop(open_pq)
         min_node: Node = open_pq.binaryHeapPop()
         while min_node is not None and not min_node.active:
-            # min_node = heappop(open_pq)
             min_node: Node = open_pq.binaryHeapPop()
         if min_node is None:
             break
@@ -65,11 +62,9 @@ def a_star(fog_maze: Maze):
                 old:Node = open_map.get(neighbor.pos)
                 if neighbor.f_val < old.f_val:
                     open_map.get(neighbor.pos).active = False       
-                    # heappush(open_pq, neighbor)
                     open_pq.binaryHeapPush(neighbor)
                     open_map[neighbor.pos] = neighbor
             else:
-                # heappush(open_pq, neighbor)
                 open_pq.binaryHeapPush(neighbor)
                 open_map[neighbor.pos] = neighbor
     return (None, closed_set)
