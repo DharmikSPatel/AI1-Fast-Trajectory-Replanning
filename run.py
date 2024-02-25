@@ -39,20 +39,55 @@ print("Adaptive Repeated A* took:", repeated_a_star(maze2, adaptive=True))
 # maze2.print_maze()
 print()'''
 
-for i in range(50):
-    maze = Maze.generate_maze(101)
-    print(i + 1)
-    maze.print_maze()
-    print()
-    print("Forwards Repeated A* took:", repeated_a_star(maze))
-    maze.print_maze()
-    maze.reset_maze()
-    print("Backwards Repeated A* took:", repeated_a_star(maze, backwards=True))
-    maze.print_maze()
-    maze.reset_maze()
-    print("Adaptive Repeated A* took:", repeated_a_star(maze, adaptive=True))
-    maze.print_maze()
-    print()
+# Terminal Can't Save all this (not on PyCharm at least)
+# Need to export to a txt file to read full thing
+
+with open("50 Mazes Full Output", 'w', encoding='utf-8') as f:
+    for i in range(50):
+        maze = Maze.generate_maze(101)
+
+        print("Maze Number: " + str((i + 1)))
+        f.write("Maze Number: " + str((i + 1)) + "\n")
+        f.flush()
+
+        maze.print_maze()
+        maze.export_maze(f)
+
+        f.flush()
+
+        temp = repeated_a_star(maze)
+        print("Forwards Repeated A* took:", temp)
+        f.write("Forwards Repeated A* took: " + str(temp) + "\n")
+        f.flush()
+
+        maze.print_maze()
+        maze.export_maze(f)
+
+        maze.reset_maze()
+
+        temp = repeated_a_star(maze, backwards=True)
+        print("Backwards Repeated A* took:", temp)
+        f.write("Backwards Repeated A* took: " + str(temp) + "\n")
+        f.flush()
+
+        maze.print_maze()
+        maze.export_maze(f)
+
+        maze.reset_maze()
+
+        temp = repeated_a_star(maze, adaptive=True)
+        print("Adaptive Repeated A* took:", temp)
+        f.write("Adaptive Repeated A* took: " + str(temp) + "\n")
+        f.flush()
+
+        maze.print_maze()
+        maze.export_maze(f)
+        f.flush()
+
+        print()
+        f.write("\n")
+        f.flush()
+f.close()
 
 
 # print("Maze 3")

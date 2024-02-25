@@ -105,8 +105,23 @@ class Maze:
                 neighbors.append(neighbor)
         return neighbors
         
-    def export_maze(self) -> None:
-        pass
+    def export_maze(self, f) -> None:
+        f.write('_%s_\n' % ('_' * self.size))
+        for i in range(self.size):
+            f.write("|")
+            for j in range(self.size):
+                print_val = self.maze[i][j]
+                if print_val == Maze.FREE_CELL:
+                    print_val = ' '  # change this char to change what is printed as blank space
+                if (i, j) == self.start_pos:
+                    print_val = Maze.START_CELL
+                if (i, j) == self.goal_pos:
+                    print_val = Maze.GOAL_CELL
+                f.write("%s" % print_val)
+            f.write("|\n")
+        f.write('‾%s‾\n' % ('‾' * self.size))
+        f.flush()
+
     def print_maze(self) -> None:
         # print("size", self.size)
         print('_%s_' % ('_'*self.size))
