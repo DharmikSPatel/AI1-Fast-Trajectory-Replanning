@@ -3,11 +3,13 @@ from maze import Maze
 from node import Node
 from binaryHeap import BinaryHeap
 h_val_dict = {}
-def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = False) -> tuple[bool, float, int]:
+def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = False, max_num_of_steps_to_print=0) -> tuple[bool, float, int]:
     start_time = time.perf_counter()
     num_expanded_nodes = 0
+    steps = 0
     path_found = True
     h_val_dict.clear()
+
     if backwards:
         real_maze.swap_goal_and_start()
     fog_maze = real_maze.generate_fog_maze()
@@ -24,15 +26,29 @@ def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = Fal
         else:
             h_val_dict.clear()
         path = trace_nodes(last_node)
+        # -----
+        if steps < max_num_of_steps_to_print:
+            for node in path:
+                fog_maze.set_cell(node.pos, Maze.MOVED_CELL)
+            print("Attempted Path Step:%s", steps)
+            fog_maze.print_maze()
+            for node in path:
+                fog_maze.set_cell(node.pos, Maze.FREE_CELL)
+        # -----
         for node in path:
             if real_maze.move_agent_to(node.pos):
                 fog_maze.move_agent_to(node.pos)
                 for neighbor in real_maze.get_neighbors(node.pos):
                     fog_maze.set_cell(neighbor, real_maze.get_cell(neighbor))
             else:
-                break
+                if steps < max_num_of_steps_to_print:
+                    print("Actual Path Step:%s", steps)
+                    fog_maze.print_maze()
+                    steps+=1
+                break #replan! start from while loop again
     if backwards:
         real_maze.swap_goal_and_start()
+    
     end_time = time.perf_counter()
     return(path_found, end_time - start_time, num_expanded_nodes)
 def a_star(fog_maze: Maze):

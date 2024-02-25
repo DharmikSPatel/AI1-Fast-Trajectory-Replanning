@@ -26,21 +26,26 @@ maze1.print_maze()
 print()'''
 
 
-'''print("Maze 2")
+print("Maze 2")
 maze2 = Maze.load_maze('mazes/maze2.txt')
 maze2.print_maze()
-print("Forwards Repeated A* took:", repeated_a_star(maze2))
-# maze2.print_maze()
+print("Forwards Repeated A* took:", repeated_a_star(maze2, max_num_of_steps_to_print=5))
+maze2.print_maze()
 maze2.reset_maze()
-print("Backwards Repeated A* took:", repeated_a_star(maze2, backwards=True))
-# maze2.print_maze()
-maze2.reset_maze()
-print("Adaptive Repeated A* took:", repeated_a_star(maze2, adaptive=True))
-# maze2.print_maze()
-print()'''
+# print("Backwards Repeated A* took:", repeated_a_star(maze2, backwards=True))
+# # maze2.print_maze()
+# maze2.reset_maze()
+# print("Adaptive Repeated A* took:", repeated_a_star(maze2, adaptive=True))
+# # maze2.print_maze()
+print()
 
 # Terminal Can't Save all this (not on PyCharm at least)
 # Need to export to a txt file to read full thing
+
+# TODO
+# 3 algos: fordward, backwards, adaptive
+# 2 tie/per algo: favor higher g values, or favor lower g values
+
 
 with open("50 Mazes Full Output", 'w', encoding='utf-8') as f:
     for i in range(50):
@@ -49,7 +54,7 @@ with open("50 Mazes Full Output", 'w', encoding='utf-8') as f:
         print("Maze Number: " + str((i + 1)))
         f.write("Maze Number: " + str((i + 1)) + "\n")
         f.flush()
-
+        
         maze.print_maze()
         maze.export_maze(f)
 
@@ -89,6 +94,7 @@ with open("50 Mazes Full Output", 'w', encoding='utf-8') as f:
         f.flush()
 f.close()
 
+#TODO: DEMO
 
 # print("Maze 3")
 # maze3 = Maze.load_maze('mazes/maze3.txt')
