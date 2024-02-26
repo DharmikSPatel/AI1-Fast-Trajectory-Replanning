@@ -19,11 +19,20 @@ class Maze:
             self.goal_pos:tuple = goal_pos
         self.agent_pos:tuple = start_pos
         self.maze = [[Maze.FREE_CELL for i in range(self.size)] for j in range(self.size)]
+        self.__og_startpos = self.start_pos
+        self.__og_goalpos = self.goal_pos
+        self.__og_agentpos = self.agent_pos
+        # print("Ac", self.start_pos, self.agent_pos, self.goal_pos)
+        # print("OG", self.__og_startpos, self.__og_agentpos, self.goal_pos)
     def reset_maze(self):
         for i in range(self.size):
             for j in range(self.size):
                 if self.maze[i][j] == Maze.MOVED_CELL:
                     self.maze[i][j] = Maze.FREE_CELL
+        self.agent_pos = self.__og_agentpos
+        self.start_pos = self.__og_startpos
+        self.goal_pos = self.__og_goalpos
+        # print("OG", self.__og_startpos, self.__og_agentpos, self.__og_goalpos)
     def generate_fog_maze(self) -> Maze:
         fog_maze = Maze(size=self.size,
                     start_pos=self.start_pos, 
@@ -75,6 +84,10 @@ class Maze:
             goalCell = (random.randint(0, size - 1), random.randint(0, size - 1))
             
         maze.goal_pos = goalCell
+
+        maze.__og_startpos = maze.start_pos
+        maze.__og_agentpos = maze.agent_pos
+        maze.__og_goalpos = maze.goal_pos
         return maze
 
     @classmethod

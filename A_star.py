@@ -3,7 +3,7 @@ from maze import Maze
 from node import Node
 from binaryHeap import BinaryHeap
 h_val_dict = {}
-def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = False, max_num_of_steps_to_print=0, f=None) -> tuple[bool, float, int]:
+def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = False, max_num_of_steps_to_print=0, f=None, favor_larger_g=True) -> tuple[bool, float, int]:
     start_time = time.perf_counter()
     num_expanded_nodes = 0
     steps = 0
@@ -14,7 +14,7 @@ def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = Fal
         real_maze.swap_goal_and_start()
     fog_maze = real_maze.generate_fog_maze()
     while not real_maze.goal_reached():
-        last_node, closed_list = a_star(fog_maze)
+        last_node, closed_list = a_star(fog_maze, favor_larger_g=favor_larger_g)
         num_expanded_nodes += len(closed_list)
         if last_node == None:
             path_found = False
@@ -59,11 +59,11 @@ def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = Fal
     
     end_time = time.perf_counter()
     return(path_found, end_time - start_time, num_expanded_nodes)
-def a_star(fog_maze: Maze):
+def a_star(fog_maze: Maze, favor_larger_g=True):
     open_pq = BinaryHeap()
     open_map = {}
     closed_set = set()
-    start_node = Node(fog_maze.agent_pos, 0, h_val(fog_maze.agent_pos, fog_maze.goal_pos), None)
+    start_node = Node(fog_maze.agent_pos, 0, h_val(fog_maze.agent_pos, fog_maze.goal_pos), None, favor_larger_g=favor_larger_g)
     open_pq.binaryHeapPush(start_node)
 
     open_map[start_node.pos] = start_node
@@ -77,7 +77,7 @@ def a_star(fog_maze: Maze):
             return (min_node, closed_set)
         closed_set.add(min_node)
         for _ in fog_maze.get_neighbors(min_node.pos):
-            neighbor: Node = Node(_, 1 + min_node.g_val, h_val(_, fog_maze.goal_pos), min_node)
+            neighbor: Node = Node(_, 1 + min_node.g_val, h_val(_, fog_maze.goal_pos), min_node, favor_larger_g=favor_larger_g)
             if fog_maze.is_blocked(neighbor.pos):
                 continue
             if neighbor in closed_set:
