@@ -34,6 +34,8 @@ def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = Fal
             f.write("Attempted Path Step: " + str((steps + 1)) + "\n")
             f.flush()
             fog_maze.print_maze()
+            fog_maze.export_maze(f)
+            f.flush()
             for node in path:
                 fog_maze.set_cell(node.pos, Maze.FREE_CELL)
         # -----
@@ -48,6 +50,8 @@ def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = Fal
                     f.write("Actual Path Step: " + str((steps + 1)) + "\n")
                     f.flush()
                     fog_maze.print_maze()
+                    fog_maze.export_maze(f)
+                    f.flush()
                     steps+=1
                 break #replan! start from while loop again
     if backwards:
