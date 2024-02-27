@@ -1,31 +1,9 @@
-Dharmik Patel - 207003436
-Adityaraj Gangopadhyay - 207001795
-
-**INCOMPLETE**
-Will Finish on LATEX PDF
-
-run.py:
-    have a for loop
-    for(50 times)
-        generate a maze
-        print maze
-        call A* forwards
-            - show each step
-        call A* backwards
-            - show each step
-        call A* adaptive
-            - show each step
-        keep count of run times
-    print the average run times
-maze.py:
-    instance methods:
-        init:
-            loads a maze from txt or generates a new one
-        print maze:
-            prints the maze to terminal
-        get_neighbors:
-            gets a list of the maze's 4 neighbors
-        is_blocked
-        is_open
-        
-    
+Adityaraj Gangopadhyay (207001795) and Dharmik Patel (207003436)
+run:
+    python3 run.py
+output:
+    50 Mazes Report Output.txt:
+    - Prints out the average run time and number of nodes expanded for 50 mazes for each algorithim 
+    Demo Output.txt:
+    - Prints the first 5 steps of a demo maze.
+See AI1_Fast_Trajectory_Replanning_Report.pdf for more details

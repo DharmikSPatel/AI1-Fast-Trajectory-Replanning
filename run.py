@@ -99,9 +99,9 @@ with open("50 Mazes Report Output", 'w', encoding='utf-8') as f:
     f.write("Repeated Backwards "+str(sumRepBacTime/50)+" ms vs " + str(sumRepBacTimeSmallerGval/50) + " ms\n")
     f.write("Repeated Adaptive "+str(sumAdapForTime/50)+" ms vs " + str(sumAdapForTimeSmallerGval/50) + " ms\n")
     f.write("Average Run Num Of Nodes Expanded: Algo Name: Larger vs Smaller\n")
-    f.write("Repeated Forwards "+str(sumRepForExpanded/50) +" nodes " + str(sumRepForExpandedSmallerGval/50) + "nodes\n")
-    f.write("Repeated Backwards "+str(sumRepBacExpanded/50)+" nodes " + str(sumRepBacExpandedSmallerGval/50) + "nodes\n")
-    f.write("Repeated Adaptive "+str(sumAdapForExpanded/50)+" nodes " + str(sumRepBacExpandedSmallerGval/50) + "nodes\n")
+    f.write("Repeated Forwards "+str(sumRepForExpanded/50) +" nodes " + str(sumRepForExpandedSmallerGval/50) + " nodes\n")
+    f.write("Repeated Backwards "+str(sumRepBacExpanded/50)+" nodes " + str(sumRepBacExpandedSmallerGval/50) + " nodes\n")
+    f.write("Repeated Adaptive "+str(sumAdapForExpanded/50)+" nodes " + str(sumAdapForExpandedSmallerGval/50) + " nodes\n")
 
 f.close()
 

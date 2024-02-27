@@ -58,7 +58,7 @@ def repeated_a_star(real_maze: Maze, backwards:bool = False, adaptive:bool = Fal
         real_maze.swap_goal_and_start()
     
     end_time = time.perf_counter()
-    return(path_found, end_time - start_time, num_expanded_nodes)
+    return(path_found, round((end_time - start_time)*1000), num_expanded_nodes)
 def a_star(fog_maze: Maze, favor_larger_g=True):
     open_pq = BinaryHeap()
     open_map = {}
